@@ -22,13 +22,13 @@ if sign(fi)~=sign(fs) % esto hace una comprobación del teo. de Bolzano (f(a)*f(
         xm=(xi+xs)/2; % variable que guarda el punto medio en cada iteración
         fm=subs(fx,xm);
         if fi*fm<0
+            Ea=abs((xm-xs)/xm);
             xs=xm;
         else
+            Ea=abs((xm-xi)/xm);
             xi=xm;
         end
-        Ea=abs((xm-xi)/xm);
         i=i+1;
-        %xa=xm;
     end
     resp=['La raiz es xm =' num2str(xm)]; % imprime el mensaje
     disp(resp);
