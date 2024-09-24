@@ -20,8 +20,8 @@ if sign(fi)~=sign(fs) % esto hace una comprobación del teo. de Bolzano (f(a)*f(
     %ea = 0.0001; % Error aceptable predefinido.
     i=1; % contador de pasos que empieza en 1 por que esos son los valores iniciales dados por el usuario.
     while Ea>ea
-        xm=(xi+xs)/2; % variable que guarda el punto medio en cada iteración
-        fm=subs(fx,xm);
+        xm = xs-((fs*(xi-xs))/(fi-fs)); % variable que guarda el punto medio actual.
+        fm = fxn(xm);
         if fi*fm<0 
             Ea=abs((xm-xs)/xm);
             xs=xm;
