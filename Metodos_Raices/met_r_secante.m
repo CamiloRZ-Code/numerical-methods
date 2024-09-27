@@ -1,4 +1,5 @@
-clear;clc;
+clear;
+disp("Secante:");
 
 syms x; % carga x como una variable analitica.
 fx = input('Ingrese su funcion en terminos de x: '); % se recibe la función del usuario.
@@ -26,7 +27,7 @@ while cent==0
     i=i+1;
     if Ea<ea
         cent=1;
-        resp1=['La raiz es x = ' num2str(xm)];
+        resp1=['La raiz es x = ' num2str(xsig)];
         disp(resp1); % imprime el mensaje
         resp2=['El numero de iteraciones fueron: ' num2str(i)]; % imprime el mensaje
         disp(resp2); % imprime el mensaje
@@ -42,3 +43,4 @@ while cent==0
         fs = fxn(xsig); % se define la siguiente f(Xi) como la actual f(Xi+1).
     end
 end
+disp(" ");

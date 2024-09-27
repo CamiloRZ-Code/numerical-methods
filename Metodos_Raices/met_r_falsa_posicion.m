@@ -1,4 +1,5 @@
-clear;clc;
+clear;
+disp("Falsa Posición:");
 
 syms x; % carga x como una variable analitica.
 fx = input('Ingrese su funcion en terminos de x: '); % se recibe la función del usuario.
@@ -42,3 +43,4 @@ if sign(fi)~=sign(fs) % esto hace una comprobación del teo. de Bolzano (f(a)*f(
 else
     disp('Error, No hay raiz en el intervalo'); % imprime el mensaje
 end
+disp(" ");

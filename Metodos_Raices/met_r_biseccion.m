@@ -1,12 +1,17 @@
-clear;clc;
+clear;
+disp("Bisección:");
 
 syms x; % carga x como una variable analitica.
 fx = input('Ingrese su funcion en terminos de x: '); % se recibe la función del usuario.
 
+%{
 %Creación de grafica para buscar un intervalo con raiz:
 x1 = input ('Ingrese valor inferior intervalo a graficar: '); % extremo inferior de la grafica.
 x2 = input ('Ingrese valor superior intervalo a graficar: '); % extremo superior de la grafica.
 fplot(fx,[x1,x2]); grid on; %imprime la grafica.
+%}
+
+
 xi = input ('Ingrese valor inferior intervalo: '); % se inicializa la variable de extremo inferior con valor inicial pasado por el usuario.
 xs = input ('Ingrese valor superior intervalo: '); % se inicializa la variable de extremo superior con valor inicial pasado por el usuario.
 
@@ -42,3 +47,4 @@ if sign(fi)~=sign(fs) % esto hace una comprobación del teo. de Bolzano (f(a)*f(
 else
     disp('Error, No hay raiz en el intervalo'); % imprime el mensaje
 end
+disp(" ");
