@@ -3,7 +3,7 @@ clear;clc;
 syms x; % carga x como una variable analitica.
 fx = input('Ingrese su funcion en terminos de x: '); % se recibe la función del usuario.
 
-%Creación de grafica para buscar un intervalo con raiz:
+%Creación de grafica para buscar un intervalo:
 x1 = input ('Ingrese valor inferior intervalo a graficar: '); % extremo inferior de la grafica.
 x2 = input ('Ingrese valor superior intervalo a graficar: '); % extremo superior de la grafica.
 fplot(fx,[x1,x2]); grid on; %imprime la grafica.
@@ -19,20 +19,22 @@ ea = input('Ingrese el valor de error aceptable: '); % se recibe un Error acepta
 %ea = 0.0001; % Error aceptable predefinido.
 li = input('Ingrese el numero de iteraciones maximas aceptable: ');
 i=1; % contador de pasos que empieza en 1 por que esos son los valores iniciales dados por el usuario.
-cent = 0; %centinela o flag que sirve para terminar el ciclo.
+cent = 0; % centinela o flag que sirve para terminar el ciclo, 0 (seguir ejecutantdo) y 1 (terminar ciclo).
 while cent==0
     xsig = xs-((fs*(xi-xs))/(fi-fs)); % variable que guarda el punto siguiente o Xi+1.
     Ea = abs((xsig-xs)/xsig);
     i=i+1;
     if Ea<ea
         cent=1;
-        resp=['La raiz es xm = ' num2str(xsig)]; % imprime el mensaje
-        disp(resp);
-        ite=['El numero de iteraciones fueron: ' num2str(i)]; % imprime el mensaje
-        disp(ite);
+        resp1=['La raiz es x = ' num2str(xm)];
+        disp(resp1); % imprime el mensaje
+        resp2=['El numero de iteraciones fueron: ' num2str(i)]; % imprime el mensaje
+        disp(resp2); % imprime el mensaje
+        resp3=['El Error final fue: ' num2str(Ea)]; % imprime el mensaje
+        disp(resp3); % imprime el mensaje
     elseif i>li
         cent=1;
-        disp('no se encontro la raíz.');
+        disp('no se encontro la raíz.'); % imprime el mensaje
     else
         xi = xs; % se define la siguiente Xi-1 como la actual Xi.
         xs = xsig; % se define la siguiente Xi como la actual Xi+1.

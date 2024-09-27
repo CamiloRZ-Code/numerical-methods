@@ -7,8 +7,8 @@ fx = input('Ingrese su funcion en terminos de x: '); % se recibe la función del
 x1 = input ('Ingrese valor inferior intervalo a graficar: '); % extremo inferior de la grafica.
 x2 = input ('Ingrese valor superior intervalo a graficar: '); % extremo superior de la grafica.
 fplot(fx,[x1,x2]); grid on; %imprime la grafica.
-xi = input ('Ingrese valor inferior intervalo (a): '); % se inicializa la variable de extremo inferior con valor inicial pasado por el usuario.
-xs = input ('Ingrese valor superior intervalo (b): '); % se inicializa la variable de extremo superior con valor inicial pasado por el usuario.
+xi = input ('Ingrese valor inferior intervalo: '); % se inicializa la variable de extremo inferior con valor inicial pasado por el usuario.
+xs = input ('Ingrese valor superior intervalo: '); % se inicializa la variable de extremo superior con valor inicial pasado por el usuario.
 
 % Se evalua el algoritmo con los extremos iniciales:
 fxn = inline(fx);
@@ -33,10 +33,12 @@ if sign(fi)~=sign(fs) % esto hace una comprobación del teo. de Bolzano (f(a)*f(
         end
         i=i+1;
     end
-    resp=['La raiz es xm = ' num2str(xm)]; % imprime el mensaje
-    disp(resp);
-    ite=['El numero de iteraciones fueron: ' num2str(i)]; % imprime el mensaje
-    disp(ite);
+    resp1=['La raiz es x = ' num2str(xm)];
+    disp(resp1); % imprime el mensaje
+    resp2=['El numero de iteraciones fueron: ' num2str(i)]; % imprime el mensaje
+    disp(resp2); % imprime el mensaje
+    resp3=['El Error final fue: ' num2str(Ea)]; % imprime el mensaje
+    disp(resp3); % imprime el mensaje
 else
-    disp('Error, No hay raiz en el intervalo');
+    disp('Error, No hay raiz en el intervalo'); % imprime el mensaje
 end
